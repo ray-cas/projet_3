@@ -1,23 +1,23 @@
 /*PAGES RESTO SECTION 1 */
 
 
-.palettedugout {									/* page_1 */						
+.palettedugout {									/* page1 */						
 	background-image: url("../pictures/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
 	background-size: 110%;
 	@include nomrestaurant;
 }
-.noteenchantee {									/* page_2 */
+.noteenchantee {									/* page2 */
 	background-image: url("../pictures/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
 	background-size: 100%;
 	background-position: 0 -150px;
 	@include nomrestaurant;
 }
-.alafrancaise {									/* page_3 */
+.alafrancaise {									/* page3 */
 	background-image: url("../pictures/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
 	background-size: 110%;
 	@include nomrestaurant;
 }
-.delicedessens {									/* page_4 */
+.delicedessens {									/* page4 */
 	background-image: url("../pictures/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
 	background-size: 100%;
 	@include nomrestaurant;
@@ -92,7 +92,7 @@
 				color: $couleur_blanche;
 				font-size: 2rem;
 				transform: rotate(0deg);
-				transition: transform 420ms 80ms; 			/* choix valeur cf ChromeDevTool */
+				transition: transform 420ms 80ms; 			
 			}
 			
 				

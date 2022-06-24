@@ -3,14 +3,15 @@
 	height: 3.5rem;
 	min-width: 15rem;
 	border-radius: 2rem;
-	background: linear-gradient(180deg, $couleur_secondaire, $couleur_primaire);	
+	background: linear-gradient(180deg, $couleur_secondaire, $couleur_primaire);	/* Un dégradé incliné de 180 degrés,
+	commençant en couleur_secondaire  et finissant en couleur_primaire. */
 			
 	padding: 0 2rem;
 	margin-bottom: 1rem;
 	display: flex;								/*  pour alignement du texte de btn */
 	justify-content: center;					
 	align-items: center; 						
-	position: relative;							/*  pour positionnement de ::before dans btn */
+	position: relative;							
 	&::after {									/* éclaircissement de btn • élément en-dessous du texte → ::after */		
 		content:"";
 		height: 100%;
@@ -22,7 +23,7 @@
 		left: 0;								
 		top: 0;									
 		opacity: 0;								/* état initial de ::after */
-		transition: opacity 500ms ease-in-out;
+		transition: opacity 500ms ease-in-out;  /* passe l opacité de 1 a 0 en 500ms */
 	}
 	&:hover {
 		&::after {
