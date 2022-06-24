@@ -1,0 +1,663 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  text-decoration: none; /* les padding et bordures ne modifient pas les dimensions des boites */
+}
+
+body {
+  font-family: Roboto-Regular, Arial, sans-serif;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h3 {
+  font-weight: normal;
+  font-family: Shrikhand, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+@font-face {
+  font-family: "Shrikhand";
+  src: url("../polices/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../polices/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+/* violet */
+/* rose */
+/* vert */
+/*noire*/
+/*blanche*/
+/*gris*/
+/* pages resto */
+/*---------------  remplissage coeur  ---------------*/
+@keyframes remplissagecoeur {
+  from {
+    transform: scale(0);
+    animation-timing-function: ease-in-out;
+  }
+  95% {
+    transform: scale(1.1);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes masquagecoeur {
+  from, 95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*---------------  restaurant  ---------------*/
+@keyframes groupe {
+  from {
+    left: -50rem;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes assiette {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*---------------  chargement animation  ---------------*/
+@keyframes stop-loading {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes main-loading {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.principal {
+  visibility: hidden;
+  animation: main-loading 0.2s 2.2s forwards;
+}
+
+.entetesite {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/*SECTION 1 • recherchelieu----------*/
+.recherche {
+  padding: 20px 0;
+  background: linear-gradient(#c3c3c3, #e9e9e9 10%);
+  display: flex;
+  justify-content: center;
+}
+.recherche__input {
+  width: 11rem;
+  text-align: center;
+  border: none;
+  background: transparent;
+}
+
+/*SECTION 2 • explication*/
+.explication {
+  text-align: center;
+  background-color: #f6f6f6;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.explication h2 {
+  margin: 0;
+}
+.explication p {
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+/*SECTION 3 • */
+.fonctionnement {
+  padding: 2rem 2rem 1rem 2rem;
+}
+.fonctionnement__boite {
+  padding: 1rem 0 1rem 1rem; /*  alignement left de h2 et boite*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /*border: solid 1px black;*/
+}
+.fonctionnement__ligne {
+  color: #000000;
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 5rem;
+  border-radius: 1.5rem;
+  box-shadow: 2px 5px 10px #c3c3c3;
+  margin-bottom: 2rem;
+  display: flex; /* pour alignement des sous éléments */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.fonctionnement__ligne-numero {
+  color: #ffffff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  background-color: #9356DC;
+  display: flex; /* pour alignement des sous éléments */
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* positionnement de fonctionnement__number */
+  left: -1rem;
+}
+.fonctionnement__ligne-icone {
+  /*width: 2rem;*/
+  color: #9356DC;
+  font-size: 1.3rem;
+  position: relative; /* positionnement de fonctionnement__icone */
+  right: 1.5rem;
+}
+.fonctionnement__ligne::after { /* éclaircissement de btn • élément en-dessous du texte → ::after */
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 1.5rem;
+  background-color: #ffc6ef;
+  position: absolute; /* pour positionnement de ::after dans btn */
+  left: 0;
+  top: 0;
+  opacity: 0; /* état initial de ::after */
+  transition: opacity 200ms ease-in-out;
+}
+.fonctionnement__ligne:hover::after {
+  opacity: 0.2; /* état final de ::after */
+}
+
+/*SECTION 4 • restaurants*/
+.restaurants {
+  background-color: #f6f6f6;
+  padding: 2rem;
+}
+.restaurants > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.carte {
+  /* background-color: $couleur_blanche */
+  width: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 2px 5px 10px #c3c3c3;
+  margin-bottom: 2rem;
+  position: relative; /* pour pouvoir positionner les enfants */
+}
+.carte__lien {
+  color: #000000;
+  text-decoration: none;
+}
+.carte__img {
+  width: 100%;
+  height: 13rem;
+  overflow: hidden;
+}
+.carte__img .photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+}
+.carte__img .photo.ajust_1 {
+  object-position: 50% 100%;
+}
+.carte__img .photo.ajust_2 {
+  object-position: 50% 60%;
+}
+.carte__info {
+  padding: 0 2rem 0 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.carte__info h4 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 1rem;
+  margin-bottom: 0; /* tronque le texte avec ... / fonctionne si largeur fixe */
+}
+.carte__info p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 0.5rem;
+}
+.carte__new {
+  color: #1b6150;
+  background-color: #99E2D0;
+  padding: 0.5rem 1rem;
+  position: absolute; /* positionnement de carte__new */
+  top: 0.1rem;
+  right: 1rem;
+}
+.carte:hover .carte__new {
+  animation: remplissagecoeur 500ms 200ms forwards;
+}
+.carte:hover .photo {
+  transition: transform 200ms 100ms ease-in;
+  transform: scale(1.1);
+}
+.carte:not(:hover) .photo {
+  transition: transform 200ms ease-in;
+  transform: scale(1);
+}
+
+@media all and (max-width: 575px) {
+  .carte {
+    width: 100%;
+  }
+}
+@media (min-width: 576px) and (max-width: 1280px) {
+  .carte {
+    width: 47%;
+  }
+  .fonctionnement__boite {
+    width: 70%;
+    margin: auto;
+  }
+}
+@media all and (min-width: 1281px) {
+  .carte {
+    width: 23%;
+  }
+  .fonctionnement__line {
+    max-width: 30%;
+  }
+}
+/*PAGES RESTO SECTION 1 */
+.palettedugout { /* page_1 */
+  background-image: url("../pictures/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-size: 110%;
+  width: 100%;
+  height: 22rem;
+  padding-top: 1.5rem;
+}
+.palettedugout__entete {
+  height: 7rem;
+  background-color: #f6f6f6;
+  border-radius: 3rem 3rem 0 0;
+  position: relative;
+  top: 15rem;
+  padding: 0 2rem 0 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.noteenchantee { /* page_2 */
+  background-image: url("../pictures/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+  background-size: 100%;
+  background-position: 0 -150px;
+  width: 100%;
+  height: 22rem;
+  padding-top: 1.5rem;
+}
+.noteenchantee__entete {
+  height: 7rem;
+  background-color: #f6f6f6;
+  border-radius: 3rem 3rem 0 0;
+  position: relative;
+  top: 15rem;
+  padding: 0 2rem 0 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alafrancaise { /* page_3 */
+  background-image: url("../pictures/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-size: 110%;
+  width: 100%;
+  height: 22rem;
+  padding-top: 1.5rem;
+}
+.alafrancaise__entete {
+  height: 7rem;
+  background-color: #f6f6f6;
+  border-radius: 3rem 3rem 0 0;
+  position: relative;
+  top: 15rem;
+  padding: 0 2rem 0 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delicedessens { /* page_4 */
+  background-image: url("../pictures/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  background-size: 100%;
+  width: 100%;
+  height: 22rem;
+  padding-top: 1.5rem;
+}
+.delicedessens__entete {
+  height: 7rem;
+  background-color: #f6f6f6;
+  border-radius: 3rem 3rem 0 0;
+  position: relative;
+  top: 15rem;
+  padding: 0 2rem 0 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  background-color: #f6f6f6;
+  padding: 0 1rem 0.5rem 1rem;
+}
+.menu__groupe {
+  padding-top: 0.5rem;
+  position: relative;
+  animation: groupe 800ms both ease-out;
+}
+.menu__ligne {
+  width: 3rem;
+  height: 0.3rem;
+  background-color: #99E2D0;
+  border: none;
+  margin: -1rem 0 1.5rem 0;
+}
+.menu__assiette {
+  background-color: #ffffff;
+  width: 100%;
+  height: 5rem;
+  border-radius: 1.5rem;
+  box-shadow: 2px 5px 10px #c3c3c3;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  animation: assiette 1s both cubic-bezier(0, 0, 0.2, 1); /* un peu plus doux que ease-out à la fin */
+}
+.menu__assiette--L1 {
+  animation-delay: 960ms;
+}
+.menu__assiette--L2 {
+  animation-delay: 1120ms;
+}
+.menu__assiette--L3 {
+  animation-delay: 1280ms;
+}
+.menu__assiette--L4 {
+  animation-delay: 1440ms;
+}
+.menu__assiette--L5 {
+  animation-delay: 1600ms;
+}
+.menu__assiette--L6 {
+  animation-delay: 1760ms;
+}
+.menu__assiette--L7 {
+  animation-delay: 1920ms;
+}
+.menu__assiette--L8 {
+  animation-delay: 2080ms;
+}
+.menu__assiette--L9 {
+  animation-delay: 2240ms;
+}
+.menu__assiette--L10 {
+  animation-delay: 2400ms;
+}
+.menu__assiette--valid { /* animation coche plat */
+  width: 130%;
+  padding-left: 1rem;
+  display: flex; /* pour alignement des sous éléments */
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  transition: all 500ms;
+}
+.menu__assiette--valid:hover { /* prépa animation */
+  width: 100%;
+}
+.menu__assiette--valid:hover > .menu__assiette-boite-3 > .fas {
+  transform: rotate(360deg);
+}
+.menu__assiette-boite-1 {
+  width: 60%;
+}
+.menu__assiette-boite-1 h4 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 1rem;
+  margin-bottom: 0; /* tronque le texte avec ... / fonctionne si largeur fixe */
+}
+.menu__assiette-boite-1 p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 0.5rem;
+}
+.menu__assiette-boite-2 {
+  width: 20%;
+  text-align: center;
+  font-weight: bold;
+}
+.menu__assiette-boite-3 {
+  width: 20%;
+  height: 5.5rem;
+  background-color: #99E2D0;
+  margin-top: -0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu__assiette-boite-3 .fas {
+  color: #ffffff;
+  font-size: 2rem;
+  transform: rotate(0deg);
+  transition: transform 420ms 80ms; /* choix valeur cf ChromeDevTool */
+}
+
+/*---------- PAGES RESTO SECTION 1 • commandez ----------*/
+.commandez {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+}
+.commandez__lien {
+  text-decoration: none;
+}
+
+/*taille ecran*/
+@media (min-width: 576px) and (max-width: 1280px) {
+  .menu-enveloppe {
+    width: 70%;
+    margin: auto;
+  }
+}
+@media all and (min-width: 1281px) {
+  .menu-enveloppe {
+    width: 32%;
+  }
+  .menu {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.bouton {
+  color: #ffffff;
+  height: 3.5rem;
+  min-width: 15rem;
+  border-radius: 2rem;
+  background: linear-gradient(180deg, #FF79DA, #9356DC);
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+  display: flex; /*  pour alignement du texte de btn */
+  justify-content: center;
+  align-items: center;
+  position: relative; /*  pour positionnement de ::before dans btn */
+}
+.bouton::after { /* éclaircissement de btn • élément en-dessous du texte → ::after */
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  background-color: #ffffff;
+  box-shadow: 2px 5px 5px;
+  position: absolute; /* pour positionnement de ::after dans btn */
+  left: 0;
+  top: 0;
+  opacity: 0; /* état initial de ::after */
+  transition: opacity 500ms ease-in-out;
+}
+.bouton:hover::after {
+  opacity: 0.2; /* état final de ::after */
+}
+
+.coeur {
+  font-size: 2rem;
+  position: relative;
+}
+.coeur > .fas {
+  color: #9356DC;
+  position: absolute; /* pour positionnement de fas au dessus de far*/
+  left: 0px;
+  top: 0.15rem;
+  transform: scale(0);
+  transform-origin: bottom;
+}
+.coeur:hover > .fas {
+  animation: remplissagecoeur 500ms 100ms forwards;
+}
+.coeur:hover > .far {
+  animation: masquagecoeur 500ms 100ms forwards;
+}
+
+.entete {
+  padding: 20px 0;
+  position: relative; /* pour le positionnement de .fleche */
+  display: flex;
+  align-items: center;
+}
+.entete__fleche {
+  font-size: 1.8rem;
+  position: absolute;
+  left: 2rem;
+}
+.entete__fleche .fas {
+  color: #000000;
+}
+.entete__logo {
+  margin: auto;
+}
+
+.pieddepage {
+  color: #ffffff;
+  background-color: #444444;
+  padding: 1rem 2rem;
+}
+.pieddepage__lien a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.pieddepage__lien a:hover {
+  color: #FF79DA;
+  transition: all 100ms ease-in-out;
+}
+.pieddepage__icone {
+  font-size: 0.9rem;
+  width: 1.8rem;
+}
+
+@media all and (min-width: 576px) {
+  .pieddepage > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.chargementpage {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #ffffff;
+  font-family: shrikhand;
+  animation: stop-loading 0.2s 2s forwards;
+}
+
+.cercles {
+  border-radius: 50px;
+  border: 3px solid transparent;
+  border-top-color: rgb(255, 255, 255);
+  animation: 2s spin 2;
+}
+.cercles:before, .cercles:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  right: 5px;
+  border-radius: 50px;
+  border: 3px solid transparent;
+  border-top-color: #9356DC;
+  opacity: 0.8;
+  animation: 2s spin 2;
+}
+.cercles:before {
+  top: 12px;
+  left: 12px;
+  bottom: 12px;
+  right: 12px;
+  opacity: 0.5;
+  animation: 1s spin 3;
+}
+
+/*fin*/
+
+/*# sourceMappingURL=style.css.map */

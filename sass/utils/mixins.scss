@@ -1,0 +1,36 @@
+@mixin nomrestaurant {
+	width: 100%;
+	height: 22rem;
+	padding-top: 1.5rem;
+	&__entete {
+		height: 7rem;
+		background-color: $couleur_gris;
+		border-radius: 3rem 3rem 0 0;
+		position: relative;
+		top: 15rem;
+		padding: 0 2rem 0 1rem;
+	    display: flex;
+	    flex-wrap: nowrap;
+	    justify-content: space-between;
+	    align-items: center;
+	}
+
+}
+
+
+@mixin ajust-h4-p {
+	h4 {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		margin-top: 1rem;
+		margin-bottom: 0;				/* tronque le texte avec ... / fonctionne si largeur fixe */
+	}
+	
+	p {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;	
+		margin-top: 0.5rem;
+	}
+}

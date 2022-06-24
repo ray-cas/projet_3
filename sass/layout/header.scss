@@ -1,0 +1,17 @@
+.entete {
+	padding: 20px 0;
+	position: relative;			/* pour le positionnement de .fleche */
+	display: flex;
+	align-items: center;
+	&__fleche {
+		font-size: 1.8rem;
+		position: absolute;		
+		left: 2rem;				
+		.fas {
+			color: $couleur_noire;
+		}
+	}
+	&__logo {
+		margin: auto;
+	}
+}

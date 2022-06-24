@@ -1,0 +1,32 @@
+.bouton {
+	color: $couleur_blanche;
+	height: 3.5rem;
+	min-width: 15rem;
+	border-radius: 2rem;
+	background: linear-gradient(180deg, $couleur_secondaire, $couleur_primaire);	
+			
+	padding: 0 2rem;
+	margin-bottom: 1rem;
+	display: flex;								/*  pour alignement du texte de btn */
+	justify-content: center;					
+	align-items: center; 						
+	position: relative;							/*  pour positionnement de ::before dans btn */
+	&::after {									/* éclaircissement de btn • élément en-dessous du texte → ::after */		
+		content:"";
+		height: 100%;
+		width: 100%;
+		border-radius: 2rem;
+		background-color: $couleur_blanche;		
+		box-shadow: 2px 5px 5px ;
+		position: absolute;						 /* pour positionnement de ::after dans btn */
+		left: 0;								
+		top: 0;									
+		opacity: 0;								/* état initial de ::after */
+		transition: opacity 500ms ease-in-out;
+	}
+	&:hover {
+		&::after {
+			opacity: .2;						/* état final de ::after */
+		}
+	}
+}
