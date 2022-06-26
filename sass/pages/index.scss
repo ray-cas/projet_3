@@ -54,7 +54,7 @@ margin-bottom: 1rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-			/*border: solid 1px black;*/
+			
 	}
 	&__ligne {
 		color: $couleur_noire;
@@ -67,7 +67,10 @@ margin-bottom: 1rem;
         display: flex;					/* pour alignement des sous éléments */
 	    justify-content: center;		 
 	    align-items: center; 	
-		position: relative;						 
+		position: relative;
+		height: 100%;
+		width: 100%;
+		
 		&-numero {
 		color: $couleur_blanche;
 		width: 2rem;
@@ -79,7 +82,6 @@ margin-bottom: 1rem;
 	    align-items: center; 			
 		position: absolute;						 /* positionnement de fonctionnement__number */
 		left: -1rem;							
-	
 		}
 		&-icone {
 		/*width: 2rem;*/
@@ -88,22 +90,10 @@ margin-bottom: 1rem;
 		position: relative;					 /* positionnement de fonctionnement__icone */
 		right: 1.5rem;							
 		}
-		&::after {									/* éclaircissement de btn • élément en-dessous du texte → ::after */		
-		content:"";
-		height: 100%;
-		width: 100%;
-		border-radius: 1.5rem;					
-		background-color: lighten($couleur_secondaire, 15%);		
-		position: absolute;						/* pour positionnement de ::after dans btn */
-		left: 0;								
-		top: 0;									
-		opacity: 0;								/* état initial de ::after */
-		transition: opacity 200ms ease-in-out;
-		}
 		&:hover {
-			&::after {
-				opacity: .2;						/* état final de ::after */
-			}
+			background-color: lighten($couleur_secondaire, 22%);
+			opacity: .9;						
+			
 		}
 	}
 }
@@ -129,7 +119,7 @@ margin-bottom: 1rem;
 		overflow: hidden;
 		box-shadow: 2px 5px 10px darken($couleur_gris, 20%);
 		margin-bottom: 2rem;
-		position: relative;						 /* pour pouvoir positionner les enfants */
+		position: relative;						 
 	&__lien {
 		color: $couleur_noire;
 		text-decoration: none;
@@ -161,16 +151,16 @@ margin-bottom: 1rem;
 		
 		
 	}
-	&__new {
+	&__nouveau {
 		color: darken($couleur_tertiaire, 50%);
 		background-color: $couleur_tertiaire;
 		padding: .5rem 1rem;
-		position: absolute;							/* positionnement de carte__new */
+		position: absolute;							/* positionnement de carte__nouveau */
 		top: .1rem;									
 		right: 1rem;								
 	}
 	&:hover {
-		.carte__new {
+		.carte__nouveau {
 			animation: remplissagecoeur 500ms 200ms forwards;
 		}
 		.photo {

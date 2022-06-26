@@ -22,6 +22,8 @@
 		opacity: 0;
 	}
 }
+
+
 /*---------------  restaurant  ---------------*/
 @keyframes groupe{
 	from {
@@ -42,7 +44,8 @@
 		transform: translateY(0);
 	}
 }
-/*---------------  chargement animation  ---------------*/
+
+/*---------------  chargement animation  loader--------------*/
 @keyframes stop-loading {
 	from {
 		opacity: 1;

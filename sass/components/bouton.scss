@@ -3,31 +3,21 @@
 	height: 3.5rem;
 	min-width: 15rem;
 	border-radius: 2rem;
-	background: linear-gradient(180deg, $couleur_secondaire, $couleur_primaire);	/* Un dégradé incliné de 180 degrés,
-	commençant en couleur_secondaire  et finissant en couleur_primaire. */
-			
+	background: linear-gradient(180deg, $couleur_secondaire, $couleur_primaire);
+	box-shadow: 2px 5px 10px darken($couleur_gris, 30%);		
+	position: absolute;						 
+	left: 0;								
+	top: 0;									
 	padding: 0 2rem;
 	margin-bottom: 1rem;
 	display: flex;								/*  pour alignement du texte de btn */
 	justify-content: center;					
 	align-items: center; 						
 	position: relative;							
-	&::after {									/* éclaircissement de btn • élément en-dessous du texte → ::after */		
-		content:"";
-		height: 100%;
-		width: 100%;
-		border-radius: 2rem;
-		background-color: $couleur_blanche;		
-		box-shadow: 2px 5px 5px ;
-		position: absolute;						 /* pour positionnement de ::after dans btn */
-		left: 0;								
-		top: 0;									
-		opacity: 0;								/* état initial de ::after */
-		transition: opacity 500ms ease-in-out;  /* passe l opacité de 1 a 0 en 500ms */
-	}
+	
 	&:hover {
-		&::after {
-			opacity: .2;						/* état final de ::after */
-		}
+		box-shadow: 2px 5px 10px darken($couleur_gris, 90%);
+		opacity: .8;						
+		
 	}
 }

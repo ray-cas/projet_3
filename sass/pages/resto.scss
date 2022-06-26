@@ -41,14 +41,13 @@
 	&__assiette {
 		background-color: $couleur_blanche;
 		width: 100%;
-	    
 	    height: 5rem;
 	    border-radius: 1.5rem;
 	    box-shadow: 2px 5px 10px darken($couleur_gris, 20%);
 		margin-bottom: 1rem;
 		overflow: hidden;
 		cursor: pointer;
-		animation: assiette 1s both cubic-bezier(0, 0, 0.2, 1);			/* un peu plus doux que ease-out à la fin */
+		animation: assiette 1s both cubic-bezier(0, 0, 0.2, 1);			
 		@for $i from 1 through $numeroassiette {
 			&--L#{$i} {
 				animation-delay: 800ms + $delaiassiette * $i;
