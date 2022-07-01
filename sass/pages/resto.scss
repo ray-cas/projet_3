@@ -1,23 +1,28 @@
 /*PAGES RESTO SECTION 1 */
-
-
-.palettedugout {									/* page1 */						
+.palettedugout {
+	/* page1 */
 	background-image: url("../pictures/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
 	background-size: 110%;
 	@include nomrestaurant;
 }
-.noteenchantee {									/* page2 */
+
+.noteenchantee {
+	/* page2 */
 	background-image: url("../pictures/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
 	background-size: 100%;
 	background-position: 0 -150px;
 	@include nomrestaurant;
 }
-.alafrancaise {									/* page3 */
+
+.alafrancaise {
+	/* page3 */
 	background-image: url("../pictures/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
 	background-size: 110%;
 	@include nomrestaurant;
 }
-.delicedessens {									/* page4 */
+
+.delicedessens {
+	/* page4 */
 	background-image: url("../pictures/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
 	background-size: 100%;
 	@include nomrestaurant;
@@ -26,11 +31,14 @@
 .menu {
 	background-color: $couleur_gris;
 	padding: 0 1rem 0.5rem 1rem;
+
 	&__groupe {
+		@include ajust-h2;
 		padding-top: .5rem;
 		position: relative;
 		animation: groupe 800ms both ease-out;
 	}
+
 	&__ligne {
 		width: 3rem;
 		height: .3rem;
@@ -38,74 +46,83 @@
 		border: none;
 		margin: -1rem 0 1.5rem 0;
 	}
+
 	&__assiette {
 		background-color: $couleur_blanche;
 		width: 100%;
-	    height: 5rem;
-	    border-radius: 1.5rem;
-	    box-shadow: 2px 5px 10px darken($couleur_gris, 20%);
+		height: 5rem;
+		border-radius: 1.5rem;
+		box-shadow: 2px 5px 10px darken($couleur_gris, 20%);
 		margin-bottom: 1rem;
 		overflow: hidden;
 		cursor: pointer;
-		animation: assiette 1s both cubic-bezier(0, 0, 0.2, 1);			
+		animation: assiette 1s both cubic-bezier(0, 0, 0.2, 1);
+
 		@for $i from 1 through $numeroassiette {
 			&--L#{$i} {
 				animation-delay: 800ms + $delaiassiette * $i;
 			}
 		}
-		&--valid {													/* animation coche plat */
+
+		&--valid {
+			/* animation coche plat */
 			width: 130%;
 			padding-left: 1rem;
-            display: flex;					/* pour alignement des sous éléments */
-            flex-wrap: nowrap;		
-            justify-content: flex-start;	
-			align-items: flex-end; 			
-            transition: all 500ms;
-			&:hover {												/* prépa animation */
+			display: flex;
+			/* pour alignement des sous éléments */
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			align-items: flex-end;
+			transition: all 500ms;
+
+			&:hover {
+				/* prépa animation */
 				width: 100%;
-				> .menu__assiette-boite-3 {
-					> .fas {
+
+				>.menu__assiette-boite-3 {
+					>.fas {
 						transform: rotate(360deg);
 					}
 				}
 			}
 		}
+
 		&-boite-1 {
 			width: 60%;
-			@include ajust-h4-p;
+			@include ajust-h3-p;
 		}
-		&-boite-2{
+
+		&-boite-2 {
 			width: 20%;
 			text-align: center;
 			font-weight: bold;
 		}
+
 		&-boite-3 {
 			width: 20%;
 			height: 5.5rem;
 			background-color: $couleur_tertiaire;
-			margin-top: -.5rem;								
+			margin-top: -.5rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
 			.fas {
 				color: $couleur_blanche;
 				font-size: 2rem;
 				transform: rotate(0deg);
-				transition: transform 420ms 80ms; 			
+				transition: transform 420ms 80ms;
 			}
-			
-				
-			
 		}
 	}
 }
 
 /*---------- PAGES RESTO SECTION 1 • commandez ----------*/
-
 .commandez {
-	background-color: $couleur_gris;	
-	display: flex;											
+	background-color: $couleur_gris;
+	display: flex;
 	justify-content: center;
+
 	&__lien {
 		text-decoration: none;
 	}
@@ -123,6 +140,7 @@
 	.menu-enveloppe {
 		width: 32%;
 	}
+
 	.menu {
 		display: flex;
 		justify-content: space-between;

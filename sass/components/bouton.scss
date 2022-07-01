@@ -4,20 +4,20 @@
 	min-width: 15rem;
 	border-radius: 2rem;
 	background: linear-gradient(180deg, $couleur_secondaire, $couleur_primaire);
-	box-shadow: 2px 5px 10px darken($couleur_gris, 30%);		
-	position: absolute;						 
-	left: 0;								
-	top: 0;									
+	box-shadow: 2px 5px 10px darken($couleur_gris, 30%);
+	position: absolute;
+	left: 0;
+	top: 0;
 	padding: 0 2rem;
 	margin-bottom: 1rem;
-	display: flex;								/*  pour alignement du texte de btn */
-	justify-content: center;					
-	align-items: center; 						
-	position: relative;							
-	
+	display: flex;
+	/*  pour alignement du texte de btn */
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
 	&:hover {
 		box-shadow: 2px 5px 10px darken($couleur_gris, 90%);
-		opacity: .8;						
-		
+		opacity: .8;
 	}
 }

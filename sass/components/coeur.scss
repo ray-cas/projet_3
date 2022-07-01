@@ -1,19 +1,22 @@
-.coeur{	
-		
+.coeur {
 	font-size: 2rem;
-	position : relative;						 
-	& > .fas {
-		color: $couleur_primaire ; 						
-		position: absolute;						 /* pour positionnement de fas au dessus de far*/
-		left: 0px;								 
+	position: relative;
+
+	&>.fas {
+		color: $couleur_primaire ;
+		position: absolute;
+		/* pour positionnement de fas au dessus de far*/
+		left: 0px;
 		top: .15rem;
 		transform: scale(0);
 		transform-origin: bottom;
 	}
-	&:hover > .fas {
+
+	&:hover>.fas {
 		animation: remplissagecoeur 500ms 100ms forwards;
 	}
-	&:hover > .far {
-		animation: masquagecoeur 500ms 100ms forwards;		
+
+	&:hover>.far {
+		animation: masquagecoeur 500ms 100ms forwards;
 	}
 }

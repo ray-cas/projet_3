@@ -1,22 +1,23 @@
 .principal {
 	visibility: hidden;
 	animation: main-loading .2s 2.2s forwards;
-	
+
 }
+
 .entetesite {
-display: flex;
-justify-content: center;
-margin-top: 2rem;
-margin-bottom: 1rem;
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
 }
 
 /*SECTION 1 • recherchelieu----------*/
-
 .recherche {
 	padding: 20px 0;
 	background: linear-gradient(darken($couleur_gris, 20%), darken($couleur_gris, 5%) 10%);
 	display: flex;
 	justify-content: center;
+
 	&__input {
 		width: 11rem;
 		text-align: center;
@@ -26,7 +27,6 @@ margin-bottom: 1rem;
 }
 
 /*SECTION 2 • explication*/
-
 .explication {
 	text-align: center;
 	background-color: $couleur_gris;
@@ -34,66 +34,73 @@ margin-bottom: 1rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	align-items: center;						
+	align-items: center;
+
 	h2 {
 		margin: 0;
 	}
+
 	p {
 		font-size: 1.3rem;
 		font-weight: normal;
 	}
-	
 }
 
 /*SECTION 3 • */
-
 .fonctionnement {
 	padding: 2rem 2rem 1rem 2rem;
+
 	&__boite {
-		padding: 1rem 0 1rem 1rem;					/*  alignement left de h2 et boite*/
+		padding: 1rem 0 1rem 1rem;
+		/*  alignement left de h2 et boite*/
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-			
 	}
+
 	&__ligne {
 		color: $couleur_noire;
 		background-color: $couleur_gris;
-        width: 100%;
-	    height: 5rem;
-	    border-radius: 1.5rem;
-	    box-shadow: 2px 5px 10px darken($couleur_gris, 20%);
+		width: 100%;
+		height: 5rem;
+		border-radius: 1.5rem;
+		box-shadow: 2px 5px 10px darken($couleur_gris, 20%);
 		margin-bottom: 2rem;
-        display: flex;					/* pour alignement des sous éléments */
-	    justify-content: center;		 
-	    align-items: center; 	
+		display: flex;
+		/* pour alignement des sous éléments */
+		justify-content: center;
+		align-items: center;
 		position: relative;
 		height: 100%;
 		width: 100%;
-		
+
 		&-numero {
-		color: $couleur_blanche;
-		width: 2rem;
-		height: 2rem;
-		border-radius: 2rem;
-		background-color: $couleur_primaire;
-		display: flex;					/* pour alignement des sous éléments */
-	    justify-content: center;		 
-	    align-items: center; 			
-		position: absolute;						 /* positionnement de fonctionnement__number */
-		left: -1rem;							
+			color: $couleur_blanche;
+			width: 2rem;
+			height: 2rem;
+			border-radius: 2rem;
+			background-color: $couleur_primaire;
+			display: flex;
+			/* pour alignement des sous éléments */
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			/* positionnement de fonctionnement__number */
+			left: -1rem;
 		}
+
 		&-icone {
-		/*width: 2rem;*/
-		color: $couleur_primaire;
-		font-size: 1.3rem;
-		position: relative;					 /* positionnement de fonctionnement__icone */
-		right: 1.5rem;							
+			/*width: 2rem;*/
+			color: $couleur_primaire;
+			font-size: 1.3rem;
+			position: relative;
+			/* positionnement de fonctionnement__icone */
+			right: 1.5rem;
 		}
+
 		&:hover {
 			background-color: lighten($couleur_secondaire, 22%);
-			opacity: .9;						
-			
+			opacity: .9;
 		}
 	}
 }
@@ -106,68 +113,81 @@ margin-bottom: 1rem;
 .restaurants {
 	background-color: $couleur_gris;
 	padding: 2rem;
-	> div {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+
+	>div {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 }
+
 .carte {
-		/* background-color: $couleur_blanche */
-		width: 100%;							
-		border-radius: 1.5rem;
-		overflow: hidden;
-		box-shadow: 2px 5px 10px darken($couleur_gris, 20%);
-		margin-bottom: 2rem;
-		position: relative;						 
+	/* background-color: $couleur_blanche */
+	width: 100%;
+	border-radius: 1.5rem;
+	overflow: hidden;
+	box-shadow: 2px 5px 10px darken($couleur_gris, 20%);
+	margin-bottom: 2rem;
+	position: relative;
+
 	&__lien {
 		color: $couleur_noire;
 		text-decoration: none;
 	}
+
 	&__img {
 		width: 100%;
 		height: 13rem;
 		overflow: hidden;
+
 		.photo {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
 			transform: scale(1);
+
 			&.ajust_1 {
-			object-position: 50% 100%;
+				object-position: 50% 100%;
 			}
+
 			&.ajust_2 {
-			object-position: 50% 60%;
+				object-position: 50% 60%;
 			}
 		}
 	}
+
 	&__info {
 		padding: 0 2rem 0 1rem;
-	    display: flex;
-	    flex-wrap: nowrap;
-	    justify-content: space-between;
-	    align-items: center;
-		@include ajust-h4-p;
-		
-		
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: center;
+		@include ajust-h3-p;
+
+
 	}
+
 	&__nouveau {
 		color: darken($couleur_tertiaire, 50%);
 		background-color: $couleur_tertiaire;
 		padding: .5rem 1rem;
-		position: absolute;							/* positionnement de carte__nouveau */
-		top: .1rem;									
-		right: 1rem;								
+		position: absolute;
+		/* positionnement de carte__nouveau */
+		top: .1rem;
+		right: 1rem;
 	}
+
 	&:hover {
 		.carte__nouveau {
 			animation: remplissagecoeur 500ms 200ms forwards;
 		}
+
 		.photo {
 			transition: transform 200ms 100ms ease-in;
 			transform: scale(1.1);
 		}
 	}
+
 	&:not(:hover) {
 		.photo {
 			transition: transform 200ms ease-in;
@@ -188,6 +208,7 @@ margin-bottom: 1rem;
 	.carte {
 		width: 47%;
 	}
+
 	.fonctionnement__boite {
 		width: 70%;
 		margin: auto;
@@ -198,6 +219,7 @@ margin-bottom: 1rem;
 	.carte {
 		width: 23%;
 	}
+
 	.fonctionnement__line {
 		max-width: 30%;
 	}

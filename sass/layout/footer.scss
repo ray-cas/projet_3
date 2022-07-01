@@ -2,14 +2,17 @@
 	color: $couleur_blanche;
 	background-color: darken($couleur_gris, 70%);
 	padding: 1rem 2rem;
+
 	&__lien a {
 		color: $couleur_blanche;
 		text-decoration: none;
+
 		&:hover {
 			color: $couleur_secondaire;
 			transition: all 100ms ease-in-out;
 		}
 	}
+
 	&__icone {
 		font-size: .9rem;
 		width: 1.8rem;
@@ -17,7 +20,7 @@
 }
 
 @media all and (min-width: 576px) {
-	.pieddepage > div {
+	.pieddepage>div {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;

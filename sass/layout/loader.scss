@@ -1,39 +1,43 @@
 .chargementpage {
   width: 100px;
   height: 100px;
-  position:absolute ;
-  top: 45%; left: 40%;
+  position: absolute;
+  top: 45%;
+  left: 40%;
   display: inline-block;
   vertical-align: middle;
- 	background-color: $couleur_blanche;
-	font-family: shrikhand  ;
-	animation: stop-loading .2s 2s forwards;
+  background-color: $couleur_blanche;
+  font-family: shrikhand;
+  animation: stop-loading .2s 2s forwards;
 }
 
-.cercles{
-  border-radius:50px;
+.cercles {
+  border-radius: 50px;
   border: 3px solid transparent;
-  border-top-color:rgb(255, 255, 255);
-  animation:2s spin 2;
-  &:before, &:after{
-    content:'';
+  border-top-color: rgb(255, 255, 255);
+  animation: 2s spin 2;
+
+  &:before,
+  &:after {
+    content: '';
     position: absolute;
     top: 5px;
     left: 5px;
     bottom: 5px;
     right: 5px;
-    border-radius:50px;
+    border-radius: 50px;
     border: 3px solid transparent;
-    border-top-color:$couleur_primaire;
-    opacity:0.8;
-    animation:2s spin 2;
+    border-top-color: $couleur_primaire;
+    opacity: 0.8;
+    animation: 2s spin 2;
   }
-  &:before{
+
+  &:before {
     top: 12px;
     left: 12px;
     bottom: 12px;
     right: 12px;
     opacity: .5;
-    animation:1s spin 3;
+    animation: 1s spin 3;
   }
 }
